@@ -99,19 +99,20 @@
 
       }
       
+
       remove_class(slide1, "hidden", "animate__fadeIn");
       let check = true;
       setInterval(function(){
         if(check){
           check = false;
           remove_class(slide1, "animate__fadeIn", "animate__fadeOut");
-
-          remove_class(slide2, "animate__fadeOut")
-          remove_class(slide2, "hidden", "animate__fadeIn");
-
+          remove_class(slide2, "animate__fadeOut", "animate__fadeIn")
+          remove_class(slide2, "hidden");
         }else{
           check = true;
-          remove_class(slide2, "animate__fadeIn", "animate__fadeOut");
+          remove_class(slide2, "animate__fadeIn");
+          add_class(slide2, "animate__fadeOut");
+
           remove_class(slide1, "animate__fadeOut", "animate__fadeIn");
         }
        
@@ -121,6 +122,9 @@
         /*add and remove class function*/
         function remove_class(element, classname,newclass='') {
             element.className = element.className.replace(classname, newclass);
+        }
+        function add_class(element, classname) {
+            element.classList ? element.classList.add(classname) : element.className += (' ' + classname);
         }
 
   </script>
