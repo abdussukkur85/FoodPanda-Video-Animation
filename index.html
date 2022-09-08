@@ -11,6 +11,11 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
   <style>
+    *{padding:0;margin:0;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+    video::-webkit-media-controls {
+      display: none;
+    }
+
     .hidden{
       display: none;
     }
@@ -44,12 +49,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
     video{
       object-fit: fill;
     }
     img{
       overflow: hidden;
+      object-fit: contain;
     }
     .image1, .image2{
       position: absolute;
